@@ -1,8 +1,3 @@
----
-title: The suff Page
---
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,22 +7,22 @@ title: The suff Page
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <style>
       :root {
-    /* Main brand color */
-    --pico-primary: #3b82f6; 
-    --pico-primary-hover: #2563eb;
-    --pico-primary-underline: rgba(59, 130, 246, 0.5);
-    
-    /* Rounded corners for a modern look */
-    --pico-border-radius: 0.75rem;
-  }
+        /* Main brand color */
+        --pico-primary: #3b82f6; 
+        --pico-primary-hover: #2563eb;
+        --pico-primary-underline: rgba(59, 130, 246, 0.5);
+        
+        /* Rounded corners for a modern look */
+        --pico-border-radius: 0.75rem;
+      }
 
-  /* Custom class for a gradient background on the hero */
-  header {
-    background: linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(255,255,255,1) 100%);
-    padding: 4rem 0;
-    border-bottom: 1px solid var(--pico-muted-border-color);
-  }
-</style>
+      /* Custom class for a gradient background on the hero */
+      header {
+        background: linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(255,255,255,1) 100%);
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--pico-muted-border-color);
+      }
+    </style>
 </head>
 <body>
 
@@ -35,7 +30,8 @@ title: The suff Page
         <ul><li><strong>The [Club Name]</strong></li></ul>
         <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="activities.html">Activities</a></li> <li><a href="#join" role="button">Join Us</a></li>
+            <li><a href="activities.html">Activities</a></li> 
+            <li><a href="#join" role="button">Join Us</a></li>
         </ul>
     </nav>
 
