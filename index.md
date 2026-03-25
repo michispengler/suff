@@ -10,6 +10,24 @@ title: The suff Page
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Awesome Club</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+      :root {
+    /* Main brand color */
+    --pico-primary: #3b82f6; 
+    --pico-primary-hover: #2563eb;
+    --pico-primary-underline: rgba(59, 130, 246, 0.5);
+    
+    /* Rounded corners for a modern look */
+    --pico-border-radius: 0.75rem;
+  }
+
+  /* Custom class for a gradient background on the hero */
+  header {
+    background: linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(255,255,255,1) 100%);
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--pico-muted-border-color);
+  }
+</style>
 </head>
 <body>
 
