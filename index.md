@@ -35,8 +35,7 @@ title: The suff Page
         <ul><li><strong>The [Club Name]</strong></li></ul>
         <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#join" role="button">Join Us</a></li>
+            <li><a href="activities.html">Activities</a></li> <li><a href="#join" role="button">Join Us</a></li>
         </ul>
     </nav>
 
