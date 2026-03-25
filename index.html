@@ -1,88 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Awesome Club</title>
+    <title>SFF e.V. | Sport und Freizeit Freunde</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    
     <style>
-      :root {
-        /* Main brand color */
-        --pico-primary: #3b82f6; 
-        --pico-primary-hover: #2563eb;
-        --pico-primary-underline: rgba(59, 130, 246, 0.5);
-        
-        /* Rounded corners for a modern look */
-        --pico-border-radius: 0.75rem;
-      }
+        :root {
+            --pico-font-family: 'Inter', sans-serif;
+            --pico-primary: #ff5722; /* Ein sportliches Orange */
+            --pico-primary-hover: #e64a19;
+            --pico-border-radius: 1rem;
+        }
 
-      /* Custom class for a gradient background on the hero */
-      header {
-        background: linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(255,255,255,1) 100%);
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--pico-muted-border-color);
-      }
+        /* Modernes Glas-Design für die Navigation */
+        nav.container {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Hero-Bereich mit Farbverlauf */
+        .hero {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            border-radius: 0 0 2rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 { color: white; font-weight: 800; font-size: 3rem; }
+        .hero p { font-size: 1.25rem; opacity: 0.9; }
+
+        /* Karten-Design für Aktivitäten */
+        .activity-card {
+            transition: transform 0.3s ease;
+            border: none;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .activity-card:hover {
+            transform: translateY(-10px);
+        }
+
+        section { padding: 4rem 0; }
+        
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body>
 
     <nav class="container">
-        <ul><li><strong>The [Club Name]</strong></li></ul>
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="activities.html">Activities</a></li> 
-            <li><a href="#join" role="button">Join Us</a></li>
+            <li><strong>SFF e.V.</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#ueber-uns">Über uns</a></li>
+            <li><a href="#aktivitaeten">Aktivitäten</a></li>
+            <li><a href="#kontakt" role="button">Mitglied werden</a></li>
         </ul>
     </nav>
 
-    <header class="container">
-        <hgroup>
-            <h1>Join the community of [Club Interest]</h1>
-            <p>We meet every Tuesday to build, learn, and grow together.</p>
-        </hgroup>
-        <button>Learn More</button>
+    <header class="hero">
+        <div class="container">
+            <h1>Sport und Freizeit Freunde e.V.</h1>
+            <p>Gemeinsam aktiv, zusammen stark. Dein Verein in der Region.</p>
+            <a href="#aktivitaeten" class="contrast" role="button">Was wir machen</a>
+        </div>
     </header>
 
     <main class="container">
-        <section id="about">
-            <h2>About Our Club</h2>
+
+        <section id="ueber-uns">
             <div class="grid">
                 <div>
-                    <h3>Our Mission</h3>
-                    <p>Briefly describe why the club exists and what members get out of it.</p>
+                    <h2>Über unseren Verein</h2>
+                    <p>Der SFF e.V. steht für Gemeinschaft, Bewegung und Spaß an der Freizeitgestaltung. Egal ob Profisportler oder Hobbysportler – bei uns ist jeder willkommen.</p>
+                    <ul>
+                        <li>✓ Vielfältige Sportangebote</li>
+                        <li>✓ Tolle Gemeinschaftsevents</li>
+                        <li>✓ Erfahrene Trainer</li>
+                    </ul>
                 </div>
                 <div>
-                    <img src="https://via.placeholder.com/400x250" alt="Club Photo">
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=600&q=80" alt="Sport Team" style="border-radius: 2rem;">
                 </div>
             </div>
         </section>
 
         <hr>
 
-        <section id="events">
-            <h2>Upcoming Events</h2>
-            <article>
-                <header><strong>Monthly Meetup</strong> - April 15th</header>
-                Discussion on [Topic] and pizza! 
-                <footer>Location: [Building/Room Name]</footer>
-            </article>
+        <section id="aktivitaeten">
+            <h2 style="text-align: center;">Unsere Aktivitäten</h2>
+            <div class="grid">
+                <article class="activity-card">
+                    <header><strong>Lauftreff</strong></header>
+                    Jeden Montag & Donnerstag erkunden wir gemeinsam die besten Wege.
+                </article>
+                <article class="activity-card">
+                    <header><strong>Freizeitsport</strong></header>
+                    Von Badminton bis Volleyball – der Spaß an der Bewegung zählt.
+                </article>
+                <article class="activity-card">
+                    <header><strong>Wandertage</strong></header>
+                    Einmal im Monat geht es raus in die Natur für Groß und Klein.
+                </article>
+            </div>
         </section>
 
-        <section id="join">
+        <section id="kontakt">
             <article>
-                <h2>Ready to Join?</h2>
-                <p>Fill out your details and we'll send you our newsletter!</p>
-                <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Email Address" required>
-                    <button type="submit">Submit Membership Request</button>
+                <hgroup>
+                    <h2>Werde Teil des Teams</h2>
+                    <p>Schreib uns einfach und komm zu einem Schnuppertraining vorbei!</p>
+                </hgroup>
+                <form action="https://formspree.io/f/DEINE_ID" method="POST">
+                    <div class="grid">
+                        <input type="text" name="name" placeholder="Dein Name" required>
+                        <input type="email" name="email" placeholder="Deine E-Mail" required>
+                    </div>
+                    <textarea name="nachricht" placeholder="An welcher Aktivität hast du Interesse?"></textarea>
+                    <button type="submit">Anfrage senden</button>
                 </form>
             </article>
         </section>
+
     </main>
 
     <footer class="container">
-        <small>© 2026 [Club Name] • Follow us on Instagram</small>
+        <small>
+            © 2026 Sport und Freizeit Freunde e.V. • 
+            <a href="#">Impressum</a> • 
+            <a href="#">Datenschutz</a>
+        </small>
     </footer>
 
 </body>
