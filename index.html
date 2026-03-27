@@ -108,18 +108,71 @@
                     <p>Du hast Interesse an den Sport und Freizeit Freunden Reitenbuch?</p>
                     <p>Dann melde dich gerne bei uns!</p>
                 </hgroup>
-                <form action="https://api.web3forms.com/submit" method="POST">
 
+                <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+                    <input type="hidden" name="access_key" value="8d7e2cbf-905e-4d67-a7e4-e9b7517414ab">
+
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                
                     <div class="grid">
-                        <input type="hidden" name="access_key" value="8d7e2cbf-905e-4d67-a7e4-e9b7517414ab">
                         <input type="text" name="name" placeholder="Dein Name" required>
                         <input type="email" name="email" placeholder="Deine E-Mail" required>
                     </div>
-                    <textarea name="nachricht" placeholder="Deine Nachricht"></textarea>
-                    <button type="submit">Anfrage senden</button>
+                    <textarea name="nachricht" placeholder="Deine Nachricht" required></textarea>
+
+                    <button type="submit" id="submit-btn">Anfrage senden</button>
+
+                    <div id="result" style="margin-top: 1rem; text-align: center;"></div>
                 </form>
             </article>
         </section>
+
+        <script>
+            const form = document.getElementById('contact-form');
+            const result = document.getElementById('result');
+        
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(form);
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+
+                result.innerHTML = "Einen Moment bitte...";
+                result.style.color = "inherit";
+            
+                fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json
+                    })
+                    .then(async (response) => {
+                        let json = await response.json();
+                        if (response.status == 200) {
+                            // Erfolgstext auf Deutsch
+                            result.innerHTML = "✅ Danke! Wir haben deine Nachricht erhalten und melden uns bald.";
+                            result.style.color = "var(--pico-primary)"; // Grün
+                            form.reset(); // Formular leeren
+                        } else {
+                            console.log(response);
+                            result.innerHTML = "❌ Da lief etwas schief. Bitte versuche es später noch einmal.";
+                            result.style.color = "#f44336"; // Rot
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        result.innerHTML = "Etwas ist schiefgelaufen!";
+                    })
+                    .then(function() {
+                        // Nachricht nach 5 Sekunden ausblenden (optional)
+                        setTimeout(() => {
+                            result.innerHTML = "";
+                        }, 5000);
+                    });
+            });
+        </script>
 
     </main>
 
